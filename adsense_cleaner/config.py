@@ -11,8 +11,8 @@
 
 config = {
     # Your AdSense authentication data.
-    'adsense_login': 'username',
-    'adsense_password': 'adsensepassword',
+    'adsense_login': '',
+    'adsense_password': '',
     
     # Webdriver to use: firefox|chrome
     'webdriver': 'firefox',
