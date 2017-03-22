@@ -1,0 +1,122 @@
+AdSense fraud advertisement cleaner automation program 
+   * by ph0x0en1x (http://ph0en1x.net).
+
+
+
+What is AdsenseCleaner?
+"""""""""""""""""""""""""""""""
+This is a simple Selenium based program, which will help you to save a lot of a 
+time with filtering and blocking fraud ADS via Google AdSense WEB interface.
+Google AdSense partners program Website: https://www.google.com/adsense
+
+This program doing the next job:
+ + searching for fraud advertisement units using bad-words lists,
+ + blocking all advertisement units that found on page,
+ + blocking advertisers AdWords accounts if needed,
+ + create screenshots for the pages with blocked units
+ + helping you to review ads units by hands (manual mode).
+
+WARNING! This program just emulating user actions for filtering and blocking 
+        ADS units, it will not make any modifications in scripts or parts of 
+        Google AdSense's Web interface.
+
+
+
+Installation
+"""""""""""""""""""""""""""""""
+This program was created using python (python.org) and tested on 
+Debian GNU/Linux and MS Windows platforms.
+
+To use this scripts you must install:
+ + python v.2.7 
+    |__ selenium >=3
+    |__ transliterate
+ + Web Browser (one of)
+    |__ Firefox 45_ESR recommended (versions 45+ will not work with)
+    |__ Chromium (free and open-source) or 
+    |__ Google Chrome
+
+
+--- Microsoft Windows ---
+
+1) Download python 2.7 package from https://www.python.org/downloads/
+2) Install python. During the installation don't forget to set the checkbox:
+    "Add 'python.exe' to Path"
+3) Start console by running the command 'cmd' as Administrator.
+4) Install required python modules, run in console: 
+    pip install selenium==2.53.0 transliterate
+5) Download Firefox 45 ESR installer for Windows:
+   https://download-installer.cdn.mozilla.net/pub/firefox/releases/45.0esr/
+6) Install Firefox. Programm will be installed in directory "Program Files".
+   Copy folder with installed Firefox 45 ESR into the AdsenseCleaner program's 
+   dir or somewhere you want, than uninstall the Firefox 45 and install the 
+   fresh version of browser if needed.
+
+
+--- Debian/Ubuntu GNU/Linux ---
+
+1) Install python pip - run in console:
+    sudo apt-get update && sudo apt-get install python-pip
+2) Install required python modules:
+    sudo pip install selenium==2.53.0 transliterate
+5) Download Firefox 45 ESR archive for linux (en-US)
+   https://download-installer.cdn.mozilla.net/pub/firefox/releases/45.0esr/
+6) Extract firefox archive in AdsenseCleaner's program dir or somewhere you 
+   want.
+
+
+
+Configuration and Usage
+"""""""""""""""""""""""""""""""
+Open "confug.py" in any text editor which can properly work with UTF-8. If yo
+using Windows OS than you have already installed python with it's nice editor
+calling 'IDLE', just call the context menu on file "confug.py" and select
+"Edit with IDLE".
+
+Set your AdSense Login if you do not want to enter it at every program start:
+  'adsense_login': 'USERNAME',
+Set your AdSense password if needed: 
+'adsense_password': 'PASSWORD',
+
+WARNING! If you have set your AdSense password in config.py (not entering it at
+         every program start) take care to store this program in a safe place
+         like encrypted disk/container to avoid data theft.
+
+Set the Firefox's binary path. Remember, you copied installed Firefox dir 
+at installation stage. Samples:
+  'firefox_binary_path': 'C:\\Adsense\\Mozilla Firefox\\firefox.exe', # Windows
+  'firefox_binary_path': '/home/AdsenseCleaner/Firefox/firefox',      # Linux
+
+Set the words list to filter and block ADS units + it's AdWords accounts:
+'words_block_units_and_accounts': [
+        u'dating for s#x',
+        u'kazzzino',
+        ........
+        ]
+
+Set the words list to filter and block ADS units only:
+'words_block_units': [
+        u'mega super effect',
+        ........
+        ]
+
+Set the words list to apply filter and give you ability to review 
+ADS units manually:
+'words_block_manual_mode': [
+        u'free download',
+        u'hot news',
+        .........
+        ]
+
+WARNING! Be sure that your computer's screen resolution is 1366px in width 
+and more.
+
+Now we have all ready, run the script. 
+For all the blocked ads units program will create the screenshots in JPG format
+(entire interface pages), so later you can manually check them and unblock some
+ads units if it's necessary. Screenshots files will be stored in relative to the
+script "tmp" directory. 
+
+
+
+
