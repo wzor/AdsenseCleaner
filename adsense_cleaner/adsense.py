@@ -20,7 +20,7 @@ Google AdSense partners program Website: https://www.google.com/adsense
 
 
 from datetime import datetime
-from os.path import dirname, realpath
+import os
 import re
 from time import sleep
 
@@ -41,7 +41,7 @@ except ImportError:
 
 
 LOGIN_PAGE_URL = ('https://www.google.com/adsense/?hl=en&noaccount=false')
-TMP_PATH = '{}/tmp/'.format(dirname(realpath(__file__)))
+TMP_PATH = '{}/tmp/'.format(os.path.dirname(os.path.realpath(__file__)))
 
 
 class AdSense(object):
@@ -50,6 +50,8 @@ class AdSense(object):
     def __init__(self, driver):
         self.wd = driver
         self.debug = True
+        if not os.path.exists(TMP_PATH):
+            os.makedirs(TMP_PATH)
 
     def msg(self, text=''):
         if self.debug:
