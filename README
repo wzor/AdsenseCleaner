@@ -29,7 +29,7 @@ Debian GNU/Linux and MS Windows platforms.
 
 To use this scripts you must install:
  + python v.2.7 
-    |__ selenium >=3
+    |__ selenium==2.53.0  (!not version 3+)
     |__ transliterate
  + Web Browser (one of)
     |__ Firefox 45_ESR recommended (versions 45+ will not work with)
