@@ -42,7 +42,7 @@ To use this scripts you must install:
 --- Microsoft Windows ---
 
 1) Download python 2.7 package from https://www.python.org/downloads/
-2) Install python. During the installation don't forget to set the checkbox:
+2) Install python. During the installation don't forget to select the component:
     "Add 'python.exe' to Path"
 3) Start console by running the command 'cmd' as Administrator.
 4) Install the required modules for python. Run in console: 
