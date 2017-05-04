@@ -93,9 +93,17 @@ class AdSense(object):
 
     def login(self, login='', password=''):
         """Login to AdSense interface."""
-        self.wd.find_element(By.ID, "Email").send_keys(login + Keys.ENTER)
-        self.wait_for(By.ID, "Passwd")
-        self.wd.find_element(By.ID, "Passwd").send_keys(password + Keys.ENTER)
+        self.wd.find_element(
+                By.XPATH,
+                ".//input[@aria-label='Email or phone']"
+            ).send_keys(login + Keys.ENTER)
+        sleep(1)
+        passwd_xpath = ".//input[@aria-label='Enter your password']"
+        self.wait_for(By.XPATH, passwd_xpath)
+        self.wd.find_element(
+                By.XPATH,
+                passwd_xpath
+            ).send_keys(password + Keys.ENTER)
         # Wait while interface will be loaded.
         self.wait_for(By.TAG_NAME, "as-app-header")
         self.msg(' +  Login OK, interface ready.')
